@@ -17,7 +17,7 @@
 				</form>
 			</section>
 
-			<ul class="unstyle">
+			<ul class="unstyle" ng-show="tasks.length">
 				<li ng-repeat="todo in tasks track by $index">
 					<input type="checkbox" ng-model="todo.done">
 					<!-- <button ng-click="removoTodo($todo)"></button> -->

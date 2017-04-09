@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>To Do</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body ng-app="todoApp">
+
+	<div class="container" ng-controller="mainCtrl">
+		<section id="main-element">
+			<p>Todo List</p>
+			<section class="centered">
+				<form ng-submit="addTask()" class="todo-form">
+					<input class="input-task" type="text" ng-model="taskText" placeholder="Enter new Todo item.." />
+					<br>
+				</form>
+			</section>
+
+			<ul class="unstyle">
+				<li ng-repeat="todo in tasks track by $index">
+					<input type="checkbox" ng-model="todo.done">
+					<!-- <button ng-click="removoTodo($todo)"></button> -->
+					<span>{{ todo.text }}</span>
+				</li>
+			</ul>
+
+				<p><button id="remove-btn" ng-click="storage()">Remove Completed Items</button></p>
+
+		</section>
+
+	</div>
+
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
